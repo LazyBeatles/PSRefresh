@@ -1,0 +1,3 @@
+# PSRefresh
+滚动视图的横向刷新和加载，像MJRefresh一样简单，
+只需一行代码，支持UIScrollView、UICollectionView、UITableView及其他UIScrollView派生的滚动视图
