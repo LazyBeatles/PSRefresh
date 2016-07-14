@@ -27,14 +27,12 @@
     [self.activityView removeFromSuperview];
     
     self.gifImageView = [[UIImageView alloc] init];
+    self.gifImageView.contentMode = UIViewContentModeCenter;
     [self addSubview:self.gifImageView];
     
     self.gifImageView.frame = self.bounds;
     
-    if (self.stateLabelHidden) {
-        self.gifImageView.contentMode = UIViewContentModeCenter;
-    } else {
-        self.gifImageView.contentMode = UIViewContentModeCenter;
+    if (!self.stateLabelHidden) {
         self.gifImageView.center = CGPointMake(self.width / 2, self.height / 2 + 120);
     }
 }

@@ -19,13 +19,15 @@
         [self addSubview:self.imageView];
         [self addSubview:self.activityView];
         
+        self.stateLabelHidden = NO;
+        
         WeakSelf(self)
         [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(weakSelf);
         }];
         
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(weakSelf.statusLabel.mas_bottom).offset(30);
+            make.top.equalTo(weakSelf.statusLabel.mas_bottom).offset(10);
             make.size.mas_equalTo(CGSizeMake(40, 40));
             make.centerX.equalTo(weakSelf);
         }];
@@ -155,7 +157,9 @@
     for (int i = 0; i < self.length; i ++) {
         NSString *str = [self substringWithRange:NSMakeRange(i, 1)];
         [string appendString:str];
-        [string appendString:@"\n"];
+        if (i != self.length - 1) { // 最后一位不加 '\n'
+            [string appendString:@"\n"];            
+        }
     }
     return string;
 }

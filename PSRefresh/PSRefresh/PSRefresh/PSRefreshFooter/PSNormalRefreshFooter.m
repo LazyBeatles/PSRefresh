@@ -40,10 +40,16 @@
         
         self.scrollView = (UIScrollView *)newSuperview;
         self.size = CGSizeMake(kPSRefreshControlWidth, newSuperview.height);
-        self.left = self.scrollView.contentSize.width;
+        if (self.scrollView.contentSize.width >= self.scrollView.width) {
+            self.left = self.scrollView.contentSize.width;
+        } else {
+            self.left = self.scrollView.width;
+        }
         self.top = 0;
         
         self.originInsets = self.scrollView.contentInset;
+        self.state = PSRefreshStatePullCanRefresh;
+        self.statusLabel.text = self.pullCanRefreshText;
     }
 }
 

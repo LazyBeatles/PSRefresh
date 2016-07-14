@@ -34,6 +34,8 @@
         self.top = 0;
         
         self.originInsets = self.scrollView.contentInset;
+        self.state = PSRefreshStatePullCanRefresh;
+        self.statusLabel.text = self.pullCanRefreshText;
     }
 }
 
