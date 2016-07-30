@@ -76,7 +76,7 @@
     switch (self.state) {
         case PSRefreshStatePullCanRefresh: {
             [self.gifImageView stopAnimating];
-            NSUInteger index =  images.count * self.pullingPercent;
+            NSUInteger index = images.count * self.pullingPercent;
             if (index >= images.count) index = images.count - 1;
             self.gifImageView.image = images[index];
             break;
@@ -86,7 +86,7 @@
     }
 }
 
-- (void)setImages:(NSArray *)images forState:(PSRefreshState)state {
+- (void)setImages:(NSArray <UIImage *>*)images forState:(PSRefreshState)state {
     if (images == nil) { return; }
     self.imagesDic[@(state)] = images;
     

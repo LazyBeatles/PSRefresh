@@ -20,10 +20,10 @@
 
 @implementation UIScrollView (PSRefresh)
 
-YYSYNTH_DYNAMIC_PROPERTY_OBJECT(header, setHeader, RETAIN, PSNormalRefreshHeader *)
-YYSYNTH_DYNAMIC_PROPERTY_OBJECT(footer, setFooter, RETAIN, PSNormalRefreshFooter *)
-YYSYNTH_DYNAMIC_PROPERTY_OBJECT(gifHeader, setGifHeader, RETAIN, PSGifRefreshHeader *)
-YYSYNTH_DYNAMIC_PROPERTY_OBJECT(gifFooter, setGifFooter, RETAIN, PSGifRefreshFooter *)
+YYSYNTH_DYNAMIC_PROPERTY_OBJECT(header, setHeader, RETAIN_NONATOMIC, PSNormalRefreshHeader *)
+YYSYNTH_DYNAMIC_PROPERTY_OBJECT(footer, setFooter, RETAIN_NONATOMIC, PSNormalRefreshFooter *)
+YYSYNTH_DYNAMIC_PROPERTY_OBJECT(gifHeader, setGifHeader, RETAIN_NONATOMIC, PSGifRefreshHeader *)
+YYSYNTH_DYNAMIC_PROPERTY_OBJECT(gifFooter, setGifFooter, RETAIN_NONATOMIC, PSGifRefreshFooter *)
 
 - (void)addRefreshHeaderWithClosure:(PSRefreshClosure)closure {
     if (!self.header && !self.gifHeader) {

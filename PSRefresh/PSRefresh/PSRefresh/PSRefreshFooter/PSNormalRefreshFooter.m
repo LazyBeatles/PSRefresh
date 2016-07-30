@@ -56,7 +56,11 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:kContentSizeKey]) {
         // 刷新完成后调整控件位置
-        self.left = self.scrollView.contentSize.width;
+        if (self.scrollView.contentSize.width >= self.scrollView.width) {
+            self.left = self.scrollView.contentSize.width;
+        } else {
+            self.left = self.scrollView.width;
+        }
     } else if ([keyPath isEqualToString:kContentOffsetKey]) {
         if (self.state == PSRefreshStateRefreshing || self.state == PSRefreshStateNoMoreData) {
             return;

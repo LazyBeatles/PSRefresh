@@ -12,6 +12,6 @@
 
 + (instancetype)header;
 
-- (void)setImages:(NSArray *)images forState:(PSRefreshState)state;
+- (void)setImages:(NSArray <UIImage *>*)images forState:(PSRefreshState)state;
 
 @end
